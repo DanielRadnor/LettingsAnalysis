@@ -63,3 +63,4 @@ if vb.run_export == True:
         #dcl.not_2020_21_df.to_excel(writer, sheet_name='Not 2020_21', index=False)
         dcl.expired_pending_df.to_excel(writer, sheet_name='Old Pending Signatures', index=False)
         dcl.cancelled_df.to_excel(writer, sheet_name='Cancelled Contracts', index=False)
+        dcl.cancelled_checked_out_df.to_excel(writer, sheet_name='Checked Out Cancelled Contracts', index=False)

@@ -85,6 +85,7 @@ combined_df['Pending Expired'] = combined_df.apply(lambda x: (True if (x['Contra
 original_combined_df = combined_df.copy()
 
 # Remove all records where the Contract State is Cancelled/Expired/Draft
+cancelled_checked_out_df = combined_df[(combined_df['Contract State'].str.contains("Cancelled"))&(combined_df['Checked Out'] == True)&(combined_df['Total Rent Paid'] >= combined_df['Contract Total Rent'])]
 cancelled_df = combined_df[combined_df['Contract State'].str.contains("Cancelled")]
 combined_df = combined_df[~combined_df['Contract State'].str.contains("Cancelled")]
 expired_df = combined_df[combined_df['Contract State'].str.contains("Expired")]
